@@ -16,3 +16,15 @@ A machine learning project that predicts the likelihood of Autism Spectrum Disor
 - Scikit-learn
 - XGBoost
 - Streamlit
+
+## AQ-10 Screening Questions
+- **A1** — I often notice small sounds when others do not
+- **A2** — I usually concentrate more on the whole picture, rather than small details
+- **A3** — I find it easy to do more than one thing at once
+- **A4** — If there is an interruption, I can switch back to what I was doing quickly
+- **A5** — I find it easy to read between the lines when someone is talking to me
+- **A6** — I know how to tell if someone listening to me is getting bored
+- **A7** — When reading a story I find it difficult to work out characters' intentions
+- **A8** — I like to collect information about categories of things
+- **A9** — I find it easy to work out what someone is thinking just by looking at their face
+- **A10** — I find it difficult to work out people's intentions
