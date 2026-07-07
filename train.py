@@ -55,6 +55,8 @@ y_pred_xgb = xgb.predict(X_test)
 ### saving model 
 
 pickle.dump(xgb, open('model.pkl', 'wb'))
+pickle.dump(list(X.columns), open('columns.pkl', 'wb'))
+print("Columns saved!")
 print("Model saved!")
 
 ### printing and checking results
