@@ -33,3 +33,48 @@ austim = st.selectbox("Does any family member have autism?", ["No", "Yes"])
 used_app_before = st.selectbox("Have you used an autism screening app before?", ["No", "Yes"])
 relation = st.selectbox("Who is filling this form?", ["Self", "Parent", "Relative", "Health care professional", "Others", "Unknown"])
 
+
+if st.button("Predict"):
+    # empty dataframe with all training columns
+    input_df = pd.DataFrame([np.zeros(len(columns))], columns=columns)
+
+    # Filling the AQ scores
+    input_df['A1_Score'] = A1
+    input_df['A2_Score'] = A2
+    input_df['A3_Score'] = A3
+    input_df['A4_Score'] = A4
+    input_df['A5_Score'] = A5
+    input_df['A6_Score'] = A6
+    input_df['A7_Score'] = A7
+    input_df['A8_Score'] = A8
+    input_df['A9_Score'] = A9
+    input_df['A10_Score'] = A10
+
+    # Filling personal info
+    input_df['age'] = age
+    input_df['gender'] = 1 if gender == "Female" else 0
+    input_df['jundice'] = 1 if jundice == "Yes" else 0
+    input_df['austim'] = 1 if austim == "Yes" else 0
+    input_df['used_app_before'] = 1 if used_app_before == "Yes" else 0
+
+    # Filling one hot encoded columns
+    # eg: if ethnicity = "Asian" → ethnicity_Asian
+    ethnicity_col = f'ethnicity_{ethnicity}'  
+    relation_col = f'relation_{relation}'
+
+    # eg: Placing 1 in ethnicity_Asian column
+    if ethnicity_col in input_df.columns:
+        input_df[ethnicity_col] = 1
+
+    if relation_col in input_df.columns:
+        input_df[relation_col] = 1
+
+
+    prediction = model.predict(input_df)[0]
+
+    if prediction == 1:
+        st.error("⚠️ This screening suggests a likelihood of ASD. Please consult a healthcare professional.")
+    else:
+        st.success("✅ This screening does not suggest ASD traits. Please consult a healthcare professional if you have concerns.")
+        
+
