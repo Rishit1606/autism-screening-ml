@@ -42,7 +42,7 @@ I compared Random Forest and XGBoost:
 | Random Forest | 98.6%    | 0.97         |
 | XGBoost       | 97.9%    | 1.00         |
 
-I chose XGBoost because in a healthcare context, false negatives are more costly than false positives. XGBoost achieved 100% recall on the ASD class, meaning it never missed a real case.
+I chose XGBoost because in a healthcare context, false negatives are more costly than false positives. XGBoost achieved better recall on the ASD class, meaning it had less chance of missing a real case.
 
 ## Data Cleaning
 
