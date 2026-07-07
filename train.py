@@ -47,14 +47,27 @@ rf.fit(X_train, y_train)
 
 y_pred = rf.predict(X_test)
 
-### printing and checking results
+# trianing on XGBoost
+xgb = XGBClassifier(random_state=42, eval_metric='logloss')
+xgb.fit(X_train, y_train)
+y_pred_xgb = xgb.predict(X_test)
 
-print(df.shape)
+### saving model 
+
+pickle.dump(xgb, open('model.pkl', 'wb'))
+print("Model saved!")
+
+### printing and checking results
 
 # RandomForest results
 print("Random Forest Results:")
 print(classification_report(y_test, y_pred))
 print(f"Accuracy: {accuracy_score(y_test, y_pred)}")
+
+# XGBoost Results 
+print("XGBoost Results:")
+print(classification_report(y_test, y_pred_xgb))
+print(f"Accuracy: {accuracy_score(y_test, y_pred_xgb)}")
 
 
 # Shows how many YES vs NO in our target column
