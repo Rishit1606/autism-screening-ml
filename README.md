@@ -55,7 +55,7 @@ I chose XGBoost because in a healthcare context, false negatives are more costly
 
 ## Live Demo
 
-[Autism Screening Predictor]((https://autism-screening-ml.onrender.com/))
+[Autism Screening Predictor](https://autism-screening-ml.onrender.com/)
 
 ## Model Selection
 
