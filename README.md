@@ -4,7 +4,7 @@ A machine learning project that predicts the likelihood of Autism Spectrum Disor
 
 ## Status
 
-🚧 Work in Progress
+✅ Complete
 
 ## Dataset
 
